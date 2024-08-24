@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinMovieApp</string>
+    <string name="api_key">008d11b6697badbe42709acd51f9210b</string>
 </resources>

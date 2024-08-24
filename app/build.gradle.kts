@@ -34,6 +34,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -58,4 +62,6 @@ dependencies {
     kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
 
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }
