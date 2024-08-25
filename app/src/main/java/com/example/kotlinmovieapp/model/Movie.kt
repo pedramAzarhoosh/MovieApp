@@ -1,5 +1,8 @@
 package com.example.kotlinmovieapp.model
 
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 import com.google.gson.annotations.SerializedName
 
 data class Movie(
@@ -44,4 +47,14 @@ data class Movie(
 
     @SerializedName("vote_count")
     val voteCount: Int
-)
+){
+    companion object {
+        @JvmStatic
+        @BindingAdapter("posterPath")
+        fun loadImage(img: ImageView,url: String){
+            val imagePath = "https://image.tmdb.org/t/p/w500/" + url
+
+            Glide.with(img.context).load(url).into(img)
+        }
+    }
+}
