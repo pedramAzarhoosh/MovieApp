@@ -35,7 +35,7 @@ class MovieAdapter(private val context: Context, private val moviesArrayList: Ar
 
         init {
             movieListItemBinding.root.setOnClickListener {
-                // Handle click events here
+
             }
         }
     }

@@ -3,18 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/swipe"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout" />
+
+    <androidx.viewpager2.widget.ViewPager2
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycle" />
+        android:layout_below="@id/tabLayout"
+        android:id="@+id/viewPager" />
 
-
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>
 
 </layout>

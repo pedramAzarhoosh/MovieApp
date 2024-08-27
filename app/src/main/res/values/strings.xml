@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">KotlinMovieApp</string>
     <string name="api_key">008d11b6697badbe42709acd51f9210b</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
