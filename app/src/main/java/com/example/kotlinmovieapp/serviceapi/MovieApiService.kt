@@ -10,4 +10,7 @@ import java.nio.channels.spi.AbstractSelectionKey
 interface MovieApiService {
     @GET("movie/popular")
     fun getPopularMovies(@Query("api_key") apiKey: String): Call<MovieResult>
+
+    @GET("movie/top_rated")
+    fun getTopRatedMovies(@Query("api_key") apiKey: String): Call<MovieResult>
 }

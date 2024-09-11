@@ -32,7 +32,6 @@ class MovieAdapter(private val context: Context, private val moviesArrayList: Ar
 
     inner class MovieViewHolder(val movieListItemBinding: MovieListItemBinding) :
         RecyclerView.ViewHolder(movieListItemBinding.root) {
-
         init {
             movieListItemBinding.root.setOnClickListener {
 
