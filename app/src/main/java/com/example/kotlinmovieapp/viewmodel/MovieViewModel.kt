@@ -16,4 +16,8 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
     public fun getTopRatedMovies():MutableLiveData<List<Movie>>{
         return repository.getTopRatedMovies()
     }
+
+    public fun getUpcomingMovies():MutableLiveData<List<Movie>>{
+        return repository.getUpComingMovies()
+    }
 }

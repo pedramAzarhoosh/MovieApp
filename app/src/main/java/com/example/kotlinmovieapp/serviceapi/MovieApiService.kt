@@ -13,4 +13,7 @@ interface MovieApiService {
 
     @GET("movie/top_rated")
     fun getTopRatedMovies(@Query("api_key") apiKey: String): Call<MovieResult>
+
+    @GET("movie/upcoming")
+    fun getUpcomingMovies(@Query("api_key") apiKey: String): Call<MovieResult>
 }

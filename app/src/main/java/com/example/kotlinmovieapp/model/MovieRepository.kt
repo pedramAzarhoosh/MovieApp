@@ -12,6 +12,7 @@ import retrofit2.Retrofit
 class MovieRepository {
     private val movies = arrayListOf<Movie>()
     private val mutableLiveData = MutableLiveData<List<Movie>>()
+    private val mutableUpcomingMovies = MutableLiveData<List<Movie>>()
     private val mutableTopRatedMovies = MutableLiveData<List<Movie>>()
     lateinit var application:Application //in order to access the resources
 
@@ -65,6 +66,27 @@ class MovieRepository {
             }
         })
         return mutableTopRatedMovies
+    }
+
+    public fun getUpComingMovies():MutableLiveData<List<Movie>>{
+        val movieApiService = RetrofitInstance.getService()
+
+        val call: Call<MovieResult> = movieApiService.getUpcomingMovies(application.applicationContext.getString(R.string.api_key))
+
+        call.enqueue(object : Callback<MovieResult> {
+            override fun onResponse(call: Call<MovieResult>, response: Response<MovieResult>) {
+                val result = response.body()
+                if (result?.results != null) {
+                    val movies = result.results as ArrayList<Movie>
+                    mutableUpcomingMovies.value = movies
+                }
+            }
+
+            override fun onFailure(call: Call<MovieResult>, throwable: Throwable) {
+                // Handle failure here
+            }
+        })
+        return mutableUpcomingMovies
     }
 
 }
